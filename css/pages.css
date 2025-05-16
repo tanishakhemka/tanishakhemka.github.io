@@ -223,6 +223,18 @@
     list-style-type: disc;
   }
 
+.desc-list {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.desc-list li {
+  margin-bottom: 0.75rem; 
+  line-height: 1.6;      
+  list-style-type: disc;   
+}
+
   @media (max-width: 600px) {
     .timeline-content {
       padding: 1.5rem 1rem;
