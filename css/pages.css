@@ -1,0 +1,230 @@
+/* Projects Section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.project-card {
+    display: block;
+    background-color: var(--card-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.project-content p {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.project-tags span {
+    background: var(--light-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Skills Section */
+.dark-section {
+    background-color: var(--background-color);
+    color: #121212;
+}
+
+.dark-section .section-title {
+    color: #121212;
+}
+
+.dark-section .section-title::after {
+    background-color: #3b82f6;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-icon {
+    font-size: 30px;
+    color: var(--secondary-color);
+    margin-bottom: 0; 
+}
+
+.skill-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skill-list li:before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.skill-list li:last-child {
+    border-bottom: none;
+}
+
+.skill-meter {
+    height: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+/* Education */
+.about-section {
+    padding: 2rem 1rem;
+    background-color: var(--background-color);
+  }
+  
+  .about-timeline {
+    max-width: 1000px;
+    margin: 0 auto;  
+    border-left: 2px solid #d1d5db;
+    position: relative;
+  }  
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 2rem;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    top: 10%;
+    left: -6px; 
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--timeline-dot); 
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .timeline-content {
+    position: relative;
+    background-color: var(--card-color);
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .timeline-content:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .event-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .event-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .event-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .timeline-date {
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+  }
+
+  .coursework-list {
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .coursework-list li {
+    margin-bottom: 0.3rem;
+    list-style-type: disc;
+  }
+
+  @media (max-width: 600px) {
+    .timeline-content {
+      padding: 1.5rem 1rem;
+    }
+  }

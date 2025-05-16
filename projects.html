@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanisha Khemka - Projects</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Portfolio of data science, analytics, and engineering projects by Tanisha Khemka.">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row px-5 pt-3 pb-1">
+                <div class="header-content">
+                    <h1 class="logo"><a href="index.html">Tanisha Khemka</a></h1>
+                    <p>Data Science | Machine Learning</p>
+                </div>
+                <nav>
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="projects.html" class="active">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                    <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="projects-container">
+                    <a href="https://github.com/tkhemka06/Job-Market-Analysis" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content">
+                            <h3>Job Market Analysis</h3>
+                            <p>Comprehensive data pipeline analyzing over 30,000 job listings to extract key skills and credentials from major job boards. Implemented using web scraping, NLP techniques, and interactive visualizations for comparing job market trends.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>BeautifulSoup</span>
+                                <span>Matplotlib</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/tkhemka06/Frame-Level-Speech-Recognition-with-MLP" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content">
+                            <h3>Frame-Level Speech Recognition with MLP</h3>
+                            <p>Implemented a multilayer perceptron (MLP) model for phoneme classification in speech recognition, achieving improved accuracy through deep learning techniques.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>PyTorch</span>
+                                <span>Deep Learning</span>
+                                <span>Speech Recognition</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/tanishakhemka/Image-Restoration-using-GAN" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content">
+                            <h3>Image restoration usign GAN</h3>
+                            <p>Built an artifact-aware image restoration pipeline using GANs with UNet and ResNet-based generators. Leveraged PatchGAN discriminators and perceptual loss to preserve fine details and visual style. Evaluated model performance using PSNR and SSIM to ensure high-fidelity reconstructions.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>PyTorch</span>
+                                <span>GAN</span>
+                                <span>Image Processing</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/tanishakhemka/MLPS" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content">
+                            <h3>Predicting Vaccine Uptake and Test Positivity using Behavioral Data</h3>
+                            <p>Leveraged the COVID-19 Trends and Impact Survey (CTIS) dataset to predict vaccine uptake and COVID-19 test positivity based on behavioral and belief indicators. The models were designed to support the CDC in making informed public health decisions.</p>
+                            <div class="project-tags">
+                                <span>Poredictive Modelling</span>
+                                <span>Feature Engineering</span>
+                                <span>Logistic Regression, XGBoost</span>
+                                <span>Data Analysis</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">   
+                <p>Just a girl, her laptop, and a lot of git commits.</p>         
+                <div class="footer-social">
+                    <a href="mailto:tanishakhemka@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/tanishakhemka" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/tanishakhemka/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script>
+        // Toggle mobile menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a nav link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Change header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // toggle for light/dark theme
+        const toggleBtn = document.getElementById("themeToggle");
+        const currentTheme = localStorage.getItem("theme");
+      
+        if (currentTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+          toggleBtn.textContent = "☀️";
+        }
+      
+        toggleBtn.addEventListener("click", () => {
+          const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+          if (isDark) {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+          } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+          }
+        });
+    </script>
+</body>
+</html>

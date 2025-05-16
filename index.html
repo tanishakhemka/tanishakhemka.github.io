@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanisha Khemka - Data Analytics Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Data Analytics and Data Science portfolio of Tanisha Khemka, featuring projects in machine learning, data visualization, and business intelligence.">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row px-5 pt-3 pb-1">
+                <div class="header-content">
+                    <h1 class="logo"><a href="index.html">Tanisha Khemka</a></h1>
+                    <p>Data Science | Machine Learning</p>
+                </div>
+                <nav>
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                    <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <img src="/Users/tanishakhemka/Documents/Portfolio/img/Profile.jpg" alt="Tanisha Khemka" class="profile-img">
+                    <div class="hero-text">
+                        <p>Hello, I'm a Master's student in Information Systems Management at Carnegie Mellon University, specializing in Business Intelligence and Data Analytics. I'm passionate about transforming complex data into actionable insights that drive strategic decisions.</p>
+                        <p>With a strong foundation in statistical analysis, machine learning algorithms, and data visualization, I help organizations leverage their data to solve real-world problems and gain competitive advantages.</p>
+                        <div class="cta-buttons">
+                            <a href="projects.html" class="btn">View My Projects</a>
+                            <a href="resume.pdf" class="btn" download>Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">   
+                <p>Just a girl, her laptop, and a lot of git commits.</p>         
+                <div class="footer-social">
+                    <a href="mailto:tanishakhemka@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/tanishakhemka" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/tanishakhemka/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Toggle mobile menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a nav link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Change header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // toggle for light/dark theme
+        const toggleBtn = document.getElementById("themeToggle");
+        const currentTheme = localStorage.getItem("theme");
+      
+        if (currentTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+          toggleBtn.textContent = "☀️";
+        }
+      
+        toggleBtn.addEventListener("click", () => {
+          const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+          if (isDark) {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+          } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+          }
+        });
+    </script>
+</body>
+</html>
