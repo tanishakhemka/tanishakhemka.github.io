@@ -679,6 +679,11 @@ main {
     margin: 0 auto;
 }
 
+.experience-item + .experience-item {
+    margin-top: 40px;
+    padding-top: 10px;
+}
+
 .experience-card {
     background: white;
     color: #333;
